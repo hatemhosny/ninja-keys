@@ -1,33 +1,16 @@
 {
-  "name": "konnors-ninja-keys",
-  "version": "1.13.4",
-  "description": "Konnors Ninja Keys",
-  "main": "src/ninja-keys.js",
-  "module": "src/ninja-keys.js",
+  "name": "@hatemhosny/ninja-keys",
+  "version": "1.14.0",
+  "description": "Ninja Keys",
+  "main": "bundle/index.js",
+  "module": "bundle/index.js",
   "type": "module",
   "types": "./src/index.d.ts",
   "exports": {
     "./package.json": "./package.json",
     ".": {
-      "import": "./src/index.js"
-    },
-    "./ninja-keys.js": {
-      "import": "./src/ninja-keys.js"
-    },
-    "./ninja-header.js": {
-      "import": "./src/ninja-header.js"
-    },
-    "./bundle/index.js": {
       "import": "./bundle/index.js",
       "types": "./src/index.d.ts"
-    },
-    "./bundle/ninja-keys.js": {
-      "import": "./bundle/ninja-keys.js",
-      "types": "./src/ninja-keys.d.ts"
-    },
-    "./bundle/ninja-header.js": {
-      "import": "./bundle/ninja-header.js",
-      "types": "./src/ninja-header.d.ts"
     }
   },
   "scripts": {
