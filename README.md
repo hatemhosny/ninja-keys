@@ -2,8 +2,7 @@
 
 ## NOTE
 
-This is a fork of <https://github.com/ssleptsov/ninja-keys> for adding things I (Konnor Rogers)
-wanted.
+This is a fork of <https://github.com/KonnorRogers/konnors-ninja-keys> which is a fork of <https://github.com/ssleptsov/ninja-keys>.
 
 Keyboard shortcut interface for your website that works with Vanilla JS, Vue, and React.
 
