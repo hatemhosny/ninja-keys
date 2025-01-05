@@ -1,0 +1,24 @@
+{
+  "title": "Static HTML/JS",
+  "activeEditor": "script",
+  "markup": {
+    "language": "html",
+    "content": "<link rel=\"preconnect\" href=\"https://fonts.gstatic.com/\" crossorigin />\n<link rel=\"preload\" href=\"https://fonts.googleapis.com/css?family=Inter:300,400,500\" as=\"style\" type=\"text/css\" />\n<link href=\"https://fonts.googleapis.com/css?family=Inter&display=swap\" rel=\"stylesheet\" />\n<link href=\"https://fonts.googleapis.com/css?family=Material+Icons&display=swap\" rel=\"stylesheet\" />\n<ninja-keys></ninja-keys>\n<button id=\"search\">Ctrl + K</button>\n"
+  },
+  "style": {
+    "language": "css",
+    "content": "html, body {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 100%;\n  width: 100%;\n}\n\n#search {\n  font-family: sans-serif;\n  padding: 1em;\n  background-color: #eee;\n  border: 1px solid #ccc;\n  border-radius: 0.5em;\n  cursor: pointer;\n}\n\nninja-keys {\n  font-family: Inter, system-ui, sans-serif;\n}\n"
+  },
+  "script": {
+    "language": "javascript",
+    "content": "import 'konnors-ninja-keys';\n\nconst ninja = document.querySelector('ninja-keys');\nninja.data = [\n  {\n    id: 'Projects',\n    title: 'Open Projects',\n    hotkey: 'ctrl+N',\n    mdIcon: 'apps',\n    section: 'Projects',\n    handler: (_data, _event) => {\n      alert('Your logic to handle');\n    },\n  },\n  {\n    id: 'Theme',\n    title: 'Change theme...',\n    mdIcon: 'desktop_windows',\n    children: ['Light Theme', 'Dark Theme', 'System Theme'],\n    hotkey: 'ctrl+T',\n    handler: () => {\n      ninja.open({ parent: 'Theme' });\n      return { keepOpen: true };\n    },\n  },\n  {\n    id: 'Light Theme',\n    title: 'Change theme to Light',\n    mdIcon: 'light_mode',\n    parent: 'Theme',\n    handler: () => {\n      ninja.classList.remove('dark');\n      return { keepOpen: true };\n    },\n  },\n  {\n    id: 'Dark Theme',\n    title: 'Change theme to Dark',\n    mdIcon: 'dark_mode',\n    parent: 'Theme',\n    handler: () => {\n      ninja.classList.add('dark');\n      return { keepOpen: true };\n    },\n  },\n];\n\ndocument.querySelector('#search').addEventListener('click', () => {\n  ninja.open();\n});\n"
+  },
+  "customSettings": {
+    "imports": {
+      "konnors-ninja-keys": "{{LC::TO_DATA_URL(./bundle/all.js)}}"
+    },
+    "types": {
+      "racing-bars": "{{LC::TO_DATA_URL(./types/index.d.ts)}}"
+    }
+  }
+}
