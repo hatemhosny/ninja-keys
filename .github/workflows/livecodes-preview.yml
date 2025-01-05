@@ -13,5 +13,5 @@ jobs:
       - name: Build and generate
         uses: live-codes/preview-in-livecodes@v1
         with:
-          install-command: 'npm install'
-          build-command: 'npm run build'
+          install-command: 'pnpm install'
+          build-command: 'pnpm build'
